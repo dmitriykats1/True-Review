@@ -1,0 +1,5 @@
+.enc
+.enc git commit .gitignore -m add exclusion for .env
+.ipynb_checkpoints/
+nlp_sample.py
+/.ipynb_checkpoints/
