@@ -20,15 +20,15 @@ There are five notebooks in the "Notebook" folder which contain all code used to
 
 ## Cleaning and combining data for analysis
 
-• Queried the tables only with restaurants that are not fast-food
-• Joined the restaurant data with review data
-• Removed any users with no friends and less than 200 reviews
-• Limited the analysis to one city
+ - Queried the tables only with restaurants that are not fast-food
+ - Joined the restaurant data with review data
+ - Removed any users with no friends and less than 200 reviews
+ - Limited the analysis to one city
 
 ## Cleaning, combining, and feature engineering data for modeling
 
-• Extracted category data and added features to the Scottsdale review dataset
-• Using LDA Topic modeling added features to the Scottsdale review dataset
+ - Extracted category data and added features to the Scottsdale review dataset
+ - Using LDA Topic modeling added features to the Scottsdale review dataset
 
 ## Modeling
 
@@ -48,13 +48,12 @@ Once the training is complete we'll fit the entire dataset and combine SVD, RF C
 Due to the nature of the dataset, many features used for our modeling were readily available from Yelp. However, given the strong correlation between a users’ review text and their rating, we needed to extract as much information from the reviews as possible to improve our modeling techniques. Using LDA Topic modeling we were able to generalize 25,000 reviews into just 50 topics that are easy to understand. Using these additional “features” we predicted a given user’s rating and whether they would like a specific restaurant.
 Numerous models were used on the dataset to make predictions. RF Classification and Regression, and Surprise SVD were used in combination to come up with final user rating for a given restaurant. Alone, these models performed relatively good, but combining them resulted in a much better prediction as measure by total RMSE of 0.74.
 
-RMSE - SVD = 1.01
-RMSE - SVD + RF-Classifier = 0.91
+ - RMSE - SVD + RF-Classifier = 0.91
 
-RMSE - RF  = 0.94 - INITIAL
-RMSE - RF  = 0.89 - TUNED
+ - RMSE - RF  = 0.94 - INITIAL
+ - RMSE - RF  = 0.89 - TUNED
 
-RMSE - SVD + RF-Classifier + RF-Regressor = 0.74
+ - RMSE - SVD + RF-Classifier + RF-Regressor = 0.74
 
 
 
