@@ -1,4 +1,4 @@
-# True Review - A personalized Yelp Restaurant Recommender
+# True Review - A Personalized Yelp Restaurant Recommender
 
 ![title](https://user-images.githubusercontent.com/47621473/59706049-7aafe780-91b4-11e9-8f7e-06acd0a64eaa.png)
 
