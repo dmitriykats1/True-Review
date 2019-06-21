@@ -42,31 +42,67 @@ https://surprise.readthedocs.io/en/stable/index.html
 
 ### Boosting SVD predictions
 
-In order to improve SVD predictions we'll use Random Forest Classifier and Regressor algorithms to predict whether a user will like a given restaurant and what rating are they likely to give, respectively. We'll utilize each user's unique review style which was extracted from the LDA Topic modeling to help the algorithm learn users' preferences. 
-Once the training is complete we'll fit the entire dataset and combine SVD, RF Classifier, and RF Regressor into a single predicted star value for the given user/restaurant combination.
+In order to improve SVD predictions we'll use a stacked ensemble model with multiple regression algorithms to predict what rating a user is likely to give. We'll utilize each user's unique review style which was extracted from the LDA Topic modeling to help the algorithm learn users' preferences. 
+We'll also deploy a content-based filtering system by generating user and restaurant profiles and then compute the similarities for each user/restaurant combination. Combining this method with a RF Classifier, and stacked ensemble algorithm, we'll produce a final predictions for each user.
+
+Stacked Ensemble Methodology
+
+![stacked](https://user-images.githubusercontent.com/47621473/59885167-39b00280-936f-11e9-87cb-ffb8307a95be.png)
+
+Content-Based Filtering Methodoly
+
+ - Create restaurant attribute matrix
+
+![user_att](https://user-images.githubusercontent.com/47621473/59885149-28ff8c80-936f-11e9-8d82-1ea674feb0a6.png)
+
+ - Create user profiles
+
+![user_profile](https://user-images.githubusercontent.com/47621473/59885157-2ef56d80-936f-11e9-9371-a63d464996d2.png)
+
+ - Create prediction matrix
+
+![final_predict](https://user-images.githubusercontent.com/47621473/59885164-36b51200-936f-11e9-843e-7f0390c7a695.png)
 
 ## Results
 
 Due to the nature of the dataset, many features used for our modeling were readily available from Yelp. However, given the strong correlation between a users’ review text and their rating, we needed to extract as much information from the reviews as possible to improve our modeling techniques. Using LDA Topic modeling we were able to generalize 25,000 reviews into just 50 topics that are easy to understand. Using these additional “features” we predicted a given user’s rating and whether they would like a specific restaurant.
-Numerous models were used on the dataset to make predictions. RF Classification and Regression, and Surprise SVD were used in combination to come up with final user rating for a given restaurant. Alone, these models performed relatively good, but combining them resulted in a much better prediction as measure by total RMSE of 0.74.
 
- - RMSE - SVD + RF-Classifier = 0.91
+Numerous models were used on the dataset to make predictions.
 
- - RMSE - RF  = 0.94 - INITIAL
- - RMSE - RF  = 0.89 - TUNED
+Stacked Ensemble - RMSE
 
- - RMSE - SVD + RF-Classifier + RF-Regressor = 0.74
+
+| Model    |     RMSE      | 
+|----------|:-------------:|
+| XGBoost  |  0.89         | 
+| LightGBM |  0.94         |
+| AdaBoost |  0.95         |
+| Linear Regression - Stacked Ensemble | 0.88 |
+
+
+Weighted Average Ensemble - RMSE
+
+| Model    |     RMSE      | 
+|----------|:-------------:|
+| Linear Regression - Stacked Ensemble |  0.88         | 
+| SVD|  0.99        |
+| Weighted Ensemble |  0.85       |
+
+
+Weighted Average Ensemble - Content and Collaborative - RMSE
+
+| Model    |     RMSE      | 
+|----------|:-------------:|
+| Weighted Average |  0.85         | 
 
 
 
 Although the final goal of combining collaborative and content-based models has been achieved, there are many ways to improve the performance of this particular application.
 - LDA Topic model can include reviews from entire dataset to provide a wider range of language dynamic and regional dialects
-- Use of other regression and classification algorithms can be deployed to improve performance further. (XGBoost, LightGBM, AdaBoost, etc.)
 - Combine models through a grid search to optimize the weight of each model on the final results.
 - Extract latent features from the SVD model to better understand feature creation and improve
 overall results
-- Create user profile vectors based on feature preference and use them to help predict similarities
-or likes of restaurants with those features
+
 
 ## Authors
 
