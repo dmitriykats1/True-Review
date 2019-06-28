@@ -69,31 +69,52 @@ Due to the nature of the dataset, many features used for our modeling were readi
 
 Numerous models were used on the dataset to make predictions.
 
-Stacked Ensemble - RMSE
+###Classifier Models - Precision / Recall
+
+| Model    | Precision / Recall | Tuned       |
+|----------|:-------------:|-------------|
+| RF       |  0.84 / 0.67  | 0.80 / 0.82 |
+| RF-Multi |  0.40 / 0.39  | 0.41 / 0.44 |
+| XGB-Multi|  0.41 / 0.43  | 0.44 / 0.46 |
+
+ - RF: Random Forest Classifier
+ - RF-Multi: Random Forest Multi-class Classifier
+ - XGB-Multi: XGBoost Multi-class Classifier
 
 
-| Model    |     RMSE      | 
-|----------|:-------------:|
-| XGBoost  |  0.89         | 
-| LightGBM |  0.94         |
-| AdaBoost |  0.95         |
-| Linear Regression - Stacked Ensemble | 0.88 |
+###Stacked Ensemble - RMSE
+
+| Model    |     RMSE      |  Tuned |
+|----------|:-------------:|--------|
+| XGBoost  |  0.89         | 0.87   |
+| LightGBM |  0.94         | 0.94   |
+| AdaBoost |  0.96         | 0.95   |
+| Linear Regression - Stacked Ensemble |  | 0.88|
 
 
-Weighted Average Ensemble - RMSE
+###Weighted Average Ensemble - RMSE
 
 | Model    |     RMSE      | 
 |----------|:-------------:|
 | Linear Regression - Stacked Ensemble |  0.88         | 
-| SVD|  0.99        |
-| Weighted Ensemble |  0.85       |
+| SVD|  0.88        |
+| Weighted Ensemble |  0.84       |
 
 
-Weighted Average Ensemble - Content and Collaborative - RMSE
+###Content Filtering Model - Precision / Recall
+
+| Model    | Precision / Recall |
+|----------|:-------------:|
+| CF       |  0.75 / 0.87  | 
+
+ - CF: Content Filtering Algorithm
+
+
+###Weighted Average Ensemble - Content and Collaborative - RMSE
 
 | Model    |     RMSE      | 
 |----------|:-------------:|
-| Weighted Average |  0.85         | 
+| Weighted Average |  0.84 | 
 
 
 
