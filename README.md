@@ -69,7 +69,7 @@ Due to the nature of the dataset, many features used for our modeling were readi
 
 Numerous models were used on the dataset to make predictions.
 
-###Classifier Models - Precision / Recall
+### Classifier Models - Precision / Recall
 
 | Model    | Precision / Recall | Tuned       |
 |----------|:-------------:|-------------|
@@ -82,7 +82,7 @@ Numerous models were used on the dataset to make predictions.
  - XGB-Multi: XGBoost Multi-class Classifier
 
 
-###Stacked Ensemble - RMSE
+### Stacked Ensemble - RMSE
 
 | Model    |     RMSE      |  Tuned |
 |----------|:-------------:|--------|
@@ -92,7 +92,7 @@ Numerous models were used on the dataset to make predictions.
 | Linear Regression - Stacked Ensemble |  | 0.88|
 
 
-###Weighted Average Ensemble - RMSE
+### Weighted Average Ensemble - RMSE
 
 | Model    |     RMSE      | 
 |----------|:-------------:|
@@ -101,7 +101,7 @@ Numerous models were used on the dataset to make predictions.
 | Weighted Ensemble |  0.84       |
 
 
-###Content Filtering Model - Precision / Recall
+### Content Filtering Model - Precision / Recall
 
 | Model    | Precision / Recall |
 |----------|:-------------:|
@@ -110,7 +110,7 @@ Numerous models were used on the dataset to make predictions.
  - CF: Content Filtering Algorithm
 
 
-###Weighted Average Ensemble - Content and Collaborative - RMSE
+### Weighted Average Ensemble - Content and Collaborative - RMSE
 
 | Model    |     RMSE      | 
 |----------|:-------------:|
