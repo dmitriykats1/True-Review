@@ -35,7 +35,7 @@ There are five notebooks in the "Notebook" folder which contain all code used to
 ## Modeling
 
 In order to predict a given user's restaurant rating based on their past experiences and reviews, we'll use multiple Machine Learning Algorithms to build a more accurate predictive model. 
-With extremely highly dimensional datasets, such as a user / item matrix, it can be easy to overfit traditional models to specific features rather than the underlying themes of the data. Using singular features to extract useful information will result in poor performance. Instead, we can use a technique called Singular Value Decomposition (SVD) to reduce a large set of features into a smaller set of themes.
+With extremely high dimensional datasets, such as a user / item matrix, it can be easy to overfit traditional models to specific features rather than the underlying themes of the data. Using singular features to extract useful information will result in poor performance. Instead, we can use a technique called Singular Value Decomposition (SVD) to reduce a large set of features into a smaller set of themes.
 Expressing each user’s taste/style in a single vector of k-taste/style values and each restaurant’s description in same k-taste/style values, then we can compute a dot product to predict how much a user will like a given restaurant.
 We'll be using Surprise's SVD algorithm to make initial predictions. Documentation can be found here:
 https://surprise.readthedocs.io/en/stable/index.html
