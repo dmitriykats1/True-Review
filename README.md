@@ -69,6 +69,8 @@ Due to the nature of the dataset, many features used for our modeling were readi
 
 Numerous models were used on the dataset to make predictions.
 
+As a baseline prediction, an average rating for each user was used with a RMSE of 0.90, which is very reasonable. The goal of the modeling stage will be to improve on this value.
+
 ### Classifier Models - Precision / Recall
 
 | Model    | Precision / Recall | Tuned       |
@@ -86,17 +88,16 @@ Numerous models were used on the dataset to make predictions.
 
 | Model    |     RMSE      |  Tuned |
 |----------|:-------------:|--------|
-| XGBoost  |  0.89         | 0.87   |
-| LightGBM |  0.94         | 0.94   |
-| AdaBoost |  0.96         | 0.95   |
-| Linear Regression - Stacked Ensemble |  | 0.88|
+| XGBoost  |  0.89         | 0.877   |
+| LightGBM |  0.87         | 0.877  |
+| SVR - Stacked Ensemble |  | 0.874 |
 
 
 ### Weighted Average Ensemble - RMSE
 
 | Model    |     RMSE      | 
 |----------|:-------------:|
-| Linear Regression - Stacked Ensemble |  0.88         | 
+| SVR - Stacked Ensemble |  0.874         | 
 | SVD|  0.88        |
 | Weighted Ensemble |  0.84       |
 
